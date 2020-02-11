@@ -21,6 +21,21 @@ button {
   margin-top: 20px;
   cursor: pointer;
 }
+aside {
+  text-align: left;
+}
+p, li{
+  font-size: 1.8rem;
+}
+h2, h3 {
+  font-size: 1.9rem;
+}
+h3, ol>li {
+  padding-left: 15px;
+}
+p {
+  margin: 2px 0;
+}
 
 .game-board {
   width: 100%;
