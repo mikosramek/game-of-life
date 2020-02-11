@@ -10,7 +10,6 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 img { display: block; width: 100%; }
 html { font-size: 62.5%; }
-a, a:visited { text-decoration: none; color: inherit }
 ul { list-style: none; padding: 0; margin: 0; }
 .wrapper { max-width: 1080px; width: 90%; margin: 0 auto; }
 
