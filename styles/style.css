@@ -15,13 +15,31 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 body {
   text-align: center;
+  font-family: sans-serif;
 }
+
 button {
   margin-top: 20px;
+  font-size: 1.4rem;
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(161, 58, 58);
+  border-radius: 25px;
   cursor: pointer;
+}
+button:hover,
+button:focus {
+  background-color: rgb(226, 225, 225);
+}
+button:active {
+  background-color: rgb(199, 199, 199);
 }
 aside {
   text-align: left;
+  background-color: #FFA0A0;
+  border: 1px solid rgb(161, 58, 58);
+  padding: 10px 20px 25px;
+  margin-top: 15px;
 }
 p, li{
   font-size: 1.8rem;
@@ -36,24 +54,80 @@ p {
   margin: 2px 0;
 }
 
+.accent {
+  position: relative;
+  z-index: 3;
+}
+.accent::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -5%;
+  bottom: -5%;
+  z-index: -1;
+  width: 110%;
+  height: 120%;
+  background-color: #FFA0A0;
+  border: 1px solid rgb(161, 58, 58);
+}
+
 .game-board {
   width: 100%;
   max-width: 500px;
   height: 500px;
   display: grid;
   margin: 0 auto;
+  border: 2px solid #808080;
 }
 
 .tile {
   background-color: #eee;
   cursor: pointer;
+  border: 0.5px solid #80808033;
 }
+
 
 .tile.alive {
   background-color: #ff0000;
 }
 .tile.highlight {
   border: 1px solid blue;
+}
+.bg-hidder {
+  width: 100%;
+  height: 150%;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+}
+.background {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: url('../assets/background.png');
+  background-size: 100%;
+  background-position: 0 0;
+  animation: moveBackground 10s linear infinite;
+}
+.bgOne {
+  left: -50vw;
+}
+.bgTwo {
+  left: 0;
+}
+.bgThree {
+  left: 50%;
+}
+@keyframes moveBackground {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(50vw);
+  }
 }
 
 @media(max-width: 550px){
