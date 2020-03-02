@@ -91,46 +91,20 @@ game.tick = function() {
   const steps = [];
   game.mapCells(function(cell, x, y) {
     let neighbourCount = 0;
-    game.cells[x-1]
-      ? game.cells[x-1][y-1]
-        ? game.cells[x-1][y-1].alive ? neighbourCount++ : null
-        : null
-      : null;
-    game.cells[x]
-      ? game.cells[x][y-1]
-        ? game.cells[x][y-1].alive ? neighbourCount++ : null
-        : null
-      : null;
-    game.cells[x+1]
-      ? game.cells[x+1][y-1]
-        ? game.cells[x+1][y-1].alive ? neighbourCount++ : null
-        : null
-      : null;
-    game.cells[x-1]
-      ? game.cells[x-1][y]
-        ? game.cells[x-1][y].alive ? neighbourCount++ : null
-        : null
-      : null;
-    game.cells[x+1]
-      ? game.cells[x+1][y]
-        ? game.cells[x+1][y].alive ? neighbourCount++ : null
-        : null
-      : null;
-    game.cells[x-1]
-      ? game.cells[x-1][y+1]
-        ? game.cells[x-1][y+1].alive ? neighbourCount++ : null 
-        : null
-      : null;
-    game.cells[x]
-      ? game.cells[x][y+1]
-        ? game.cells[x][y+1].alive ? neighbourCount++ : null 
-        : null
-      : null;
-    game.cells[x+1]
-      ? game.cells[x+1][y+1]
-        ? game.cells[x+1][y+1].alive ? neighbourCount++ : null 
-        : null
-      : null;
+    const combos = [
+      [-1,-1], [0,-1], [1,-1],
+      [-1, 0],         [1, 0],
+      [ -1,1], [0, 1], [1, 1],
+    ]
+    combos.forEach((combo) => {
+      const neighbourX = combo[0];
+      const neighbourY = combo[1];
+      game.cells[x + neighbourX]
+        ? game.cells[x + neighbourX][y + neighbourY]
+          ? game.cells[x + neighbourX][y + neighbourY].alive ? neighbourCount++ : null
+          : null
+        : null;
+    });
   /* 
     -For a space that is 'populated':-
     Each cell with one or no neighbors dies, as if by solitude. 

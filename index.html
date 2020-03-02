@@ -10,11 +10,16 @@
 <body>
   <header>
     <div class="wrapper">
-      <h1>Conway's Game of Life</h1>
-      <h2>Recreated by Miko Sramek</h2>
+      <h1><span class="accent">Conway's Game of Life</span></h1>
+      <h2><span class="accent">Recreated by Miko Sramek</span></h2>
     </div>
   </header>
   <main>
+    <div class="bg-hidder">
+      <div class="background bgOne"></div>
+      <div class="background bgTwo"></div>
+      <div class="background bgThree"></div>
+    </div>
     <div class="wrapper">
       <ul class="game-board" id="game-board">
         
@@ -29,16 +34,17 @@
         <p>Use your mouse to click a square - this will add or remove life. Grey means there isn't life, red means there is.</p>
         <p>Once you're satisfied with your life arrangements, hit the Play button to see what happens.</p>
         <p>Whether life will flourish or die is based on 4 rules:</p>
-        <h3>For each space that has life:</h3>
+        <h3>A space with life:</h3>
         <ol>
-          <li>Each cell with one or no neighbors dies, as if by solitude.</li>
-          <li>Each cell with four or more neighbors dies, as if by overpopulation.</li>
-          <li>Each cell with two or three neighbors survives.</li>
+          <li>with one or no neighbors dies, as if by solitude.</li>
+          <li>with four or more neighbors dies, as if by overpopulation.</li>
+          <li>with two or three neighbors survives.</li>
         </ol>
-        <h3>For each space that has no life:</h3>
+        <h3>A space that has no life:</h3>
         <ol>
-          <li>Each cell with three neighbors becomes populated.</li>
+          <li>with three neighbors becomes populated.</li>
         </ol>
+        <p>If you need some inspiration, you may look through <a href="https://www.conwaylife.com/wiki/Main_Page" aria-label="Open the conway life wiki in a new page." target="_blank">this wiki</a>.</p>
       </aside>
     </div>
   </main>
